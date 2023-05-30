@@ -1,0 +1,12 @@
+<div class="form-area">
+  <h1>Angular-Services Works!</h1>
+  <ul *ngIf="posts.length>0 then postLIst">
+  </ul>
+</div>
+
+<ng-template #postLIst>
+  <li *ngFor="let item of posts">
+    {{item.postTitle}}
+  </li>
+</ng-template>
+

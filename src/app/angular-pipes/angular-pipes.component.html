@@ -1,0 +1,88 @@
+<div class="form-area" >
+  <h1><b>Angular Pipes</b></h1>
+  <br />
+  <button (click)="pipesShow('UppercasePipe')">Uppercase Pipe</button>
+  &nbsp;
+  <button (click)="pipesShow('LowercasePipe')">Lowercase Pipe</button>
+  &nbsp;
+  <button (click)="pipesShow('DecimalNumberPipe')">Decimal/Number Pipe</button>
+  &nbsp;
+  <button (click)="pipesShow('CurrencyPipe')">Currency Pipe</button>
+  &nbsp;
+  <button (click)="pipesShow('DatePipe')">Date Pipe</button>
+  &nbsp;
+  <button (click)="pipesShow('JSONPipe')">JSON Pipe</button>
+  &nbsp;
+  <button (click)="pipesShow('PersentPipe')">Persent Pipe</button>
+  &nbsp;
+  <button (click)="pipesShow('SlicePipe')">Slice Pipe</button>
+  &nbsp;
+  <button (click)="pipesShow('CustomPipe')">Custom Pipe</button>
+
+  <div *ngIf="pipes=='UppercasePipe' then UppercasePipes"></div>
+  <div *ngIf="pipes=='LowercasePipe' then LowercasePipes"></div>
+  <div *ngIf="pipes=='DecimalNumberPipe' then DecimalNumberPipes"></div>
+  <div *ngIf="pipes=='CurrencyPipe' then CurrencyPipe"></div>
+  <div *ngIf="pipes=='DatePipe' then DatePipes"></div>
+  <div *ngIf="pipes=='JSONPipe' then JSONPipes"></div>
+  <div *ngIf="pipes=='PersentPipe' then PersentPipes"></div>
+  <div *ngIf="pipes=='SlicePipe' then SlicePipes"></div>
+  <div *ngIf="pipes=='CustomPipe' then CustomPipe"></div>
+</div>
+<ng-template #UppercasePipes>
+  <h1>USAGE OF <span style="color: red;">UPPERCASE AND LOWERCASE PIPE</span> </h1>
+  <h3>{{upperCasePipe | uppercase}}</h3>
+</ng-template>
+
+<ng-template #LowercasePipes>
+  <h1>USAGE OF <span style="color: red;">lowercase AND LOWERCASE PIPE</span> </h1>
+  <h3>{{lowerCasePipe | lowercase}}</h3>
+</ng-template>
+
+<ng-template #DecimalNumberPipes>
+  <h1>USAGE OF <span style="color: red;">DECIMAL / NUMBER PIPE</span> </h1>
+  <h3>{{numberPipe | number}}</h3>
+  <h3>{{decimalPipe | number:'3.2-3'}}</h3>
+</ng-template>
+
+<ng-template #CurrencyPipe>
+  <h1>USAGE OF <span style="color: red;">CURRENCY  PIPE</span> </h1>
+  <h3>{{decimalPipe | currency:'BDT' }}</h3>
+</ng-template>
+
+<ng-template #DatePipes>
+  <h1>USAGE OF <span style="color: red;">DATE  PIPE</span> </h1>
+  <h3>{{nowDate | date:'dd-MMM-yyyy hh:mm:ss' }}</h3>
+  <h3>{{nowDate}}</h3>
+</ng-template>
+
+<ng-template #JSONPipes>
+  <h1>USAGE OF <span style="color: red;">JSON  PIPE</span> </h1>
+  <h3>{{objPipes | json }}</h3>
+</ng-template>
+
+<ng-template #PersentPipes>
+  <h1>USAGE OF <span style="color: red;">PERSENT  PIPE</span> </h1>
+  <h3>{{decimalPipe | percent   }}</h3>
+  <h3>{{1 | percent:'1.1-1'   }}</h3>
+</ng-template>
+
+<ng-template #SlicePipes>
+  <h1>USAGE OF <span style="color: red;">SLICE  PIPE</span> </h1>
+  <h3>{{slicPipe | slice : 0 : 3}}</h3>
+</ng-template>
+
+<ng-template #CustomPipe>
+  <h1>USAGE OF <span style="color: red;">CUSTOM PIPE</span> </h1>
+  <h3>{{objPipes.city | append}}</h3>
+
+  <h2>Custom pipe Using CLI Command flow README.md </h2>
+  <h3>{{objPipes.name | appendCLI}}</h3>
+
+  <h2>Custom pipe with Arguments </h2>
+  <p>{{damiText | summary }}</p>
+</ng-template>
+
+
+
+

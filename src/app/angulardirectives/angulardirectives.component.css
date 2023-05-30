@@ -1,0 +1,13 @@
+button{
+  width: 100px;
+  height: 28px;
+}
+
+.main{
+  color: darkblue;
+}
+.texttransform{
+  text-transform: uppercase;
+}
+
+

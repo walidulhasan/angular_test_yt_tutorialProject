@@ -1,0 +1,46 @@
+<div class="form-area">
+  <h1>Post Form</h1>
+  <br /><br />
+  <input type="text" placeholder="Name" [(ngModel)]="name" />
+  <br /><br />
+  <input type="text" placeholder="Email" [(ngModel)]="email" />
+  <br /><br />
+  <textarea
+    rows="10"
+    cols="30"
+    placeholder="Address"
+    [(ngModel)]="address"
+  ></textarea>
+  <br /><br />
+  <button (click)="saveData()">Save Data</button>
+  &nbsp;
+  <button (click)="clearData()">Clear Data</button>
+</div>
+<br />
+<br />
+<div class="table-area">
+  <table style="align-self: center; margin-bottom: 80px">
+    <thead>
+      <th>#Sl</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Address</th>
+      <th>Action</th>
+    </thead>
+    <tbody>
+      <tr *ngIf="dataList.length>0 then itemLists else noDataFound"></tr>
+    </tbody>
+  </table>
+</div>
+<ng-template #itemLists>
+  <tr *ngFor="let item of dataList; index as i">
+    <td>{{ i + 1 }}</td>
+    <td>{{ item.name }}</td>
+    <td>{{ item.email }}</td>
+    <td>{{ item.address }}</td>
+    <td><button (click)="deleteRow(i)">Delete</button></td>
+  </tr>
+</ng-template>
+<ng-template #noDataFound>
+  <span>No Data Found...</span>
+</ng-template>
