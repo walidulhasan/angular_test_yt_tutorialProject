@@ -1,3 +1,18 @@
-<h3>Post List Component</h3>
+<div class="form-area">
+  <h3>Post List Component</h3>
+  <button (click)="addDataToList()">Add Data to List</button>
+  <ul>
+    <li *ngFor="let item of listData">
+      {{item.postTitle}}
+    </li>
+  </ul>
+</div>
 
-
+<!-- Post -->
+<div>
+  <h1>Post</h1>
+  <div *ngFor="let item of posts; index as i">
+    <h3>{{item.title}}</h3>
+    <button class="btn btn-sx btn-info" [routerLink]="['/SinglepostComponent',i]">See Post</button>
+  </div>
+</div>

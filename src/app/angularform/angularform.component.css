@@ -1,0 +1,12 @@
+.table-area{
+  display: flex;
+  justify-content: center;
+  left: 30%;
+}
+.textleft{
+  text-align: left;
+}
+
+/* .form-control.ng-touched.ng-invalid{
+	border:2px solid red;
+} */

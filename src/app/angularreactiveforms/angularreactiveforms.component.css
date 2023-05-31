@@ -1,0 +1,8 @@
+.table-area{
+  display: flex;
+  justify-content: center;
+  left: 30%;
+}
+.textleft{
+  text-align: left;
+}

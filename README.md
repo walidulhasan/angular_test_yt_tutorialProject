@@ -33,3 +33,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## MY COMMAND CLI
 Generate Component > ng g c component-name
 Generate Pipe > ng g pipe pipe-name
+Generate Services > ng g s service-name
+Generate Interface > ng g i interface-name

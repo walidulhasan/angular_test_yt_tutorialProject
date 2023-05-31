@@ -1,50 +1,17 @@
-<!-- Class Binding -->
-<h1 [class.text-red]="bool">Angular Appp</h1>
 
-<!-- Style Binding -->
-<P [style.color]="bool?'red':'blue'">This is my Style</P>
-<!-- String Interpolation -->
-<p>{{message}}</p>
-<!-- Property Binding -->
-
-<img alt="Image" width="200"    src="{{imgUrl}}" style="margin-right: 2px;">
-
-<img alt="Image" width="200"  [src]="imgUrl">
-
-<!-- Event Binding -->
-<br>
-<button (click)="buttonClick()">Click Me</button>
-<br>
-<h2>Event Filtaring</h2>
-
-<input type="text"  placeholder="text me" (keyup.enter)="onKeyUp($event)">
-<br>
-<h2>Template Variable</h2>
-<input type="text"  placeholder="text me" (keyup.enter)="onKeyUps(username.value)" #username>
-<br>
-<h2>Two way Data Binding</h2>
-<input [(ngModel)]="fromMessage" (keyup.enter)="onKeyUpss()">
-<br>
-<h2>one-way and Two-way data Binding</h2>
-<input [value]="textValue"  (keyup.enter)="onKeyUpsss()" style="margin-bottom: 20px;">
-<br>
-<input [(ngModel)]="textValue"   (keyup.enter)="onKeyUpsss()" style="width: 300px;">
-
-<!-- data binding event -->
-<app-databindingevent></app-databindingevent>
-<!-- Angular Directives -->
-<app-angulardirectives></app-angulardirectives>
-
-<app-user-details-form></app-user-details-form>
+<div style="text-align: center;">
+  <div>
+    <button class="btn btn-primary  mb-5 mt-5" routerLink="/" routerLinkActive="active">Home</button>
+  </div>
+  <button class="btn btn-primary btn-sm mb-5 mt-5" routerLink="/AngularreactiveformsComponent" routerLinkActive="active" >Angular Routing</button>
+  &nbsp;
+  <button class="btn btn-primary btn-sm mb-5 mt-5" routerLink="/PostListComponent" routerLinkActive="active" >PostListComponent</button>
+  <router-outlet></router-outlet>
+</div>
+<p>7:21:01</p>
 
 
-<!-- ANGULAR_PIPES -->
 
-<app-angular-pipes></app-angular-pipes>
-
-
-<!--Angular Services-->
-<app-angular-services></app-angular-services>
 
 <!-- One-Way Data Binding
 #String INterpolation - {{title}}

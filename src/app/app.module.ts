@@ -7,7 +7,7 @@ import { navbarComponent } from './navbar/navbar.component';
 import { PostComponent } from './post/post.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { DatabindingeventComponent } from './databindingevent/databindingevent.component';
 import { AngulardirectivesComponent } from './angulardirectives/angulardirectives.component';
 import { UserDetailsFormComponent } from './user-details-form/user-details-form.component';
@@ -16,6 +16,11 @@ import { AppendPipe } from './pipes/append.pipes';
 import { AppendCLIPipe } from './pipes/append-cli.pipe';
 import { SummaryPipe } from './pipes/summary.pipe';
 import { AngularServicesComponent } from './angular-services/angular-services.component';
+import { PostService } from './services/post.service';
+import { AngularformComponent } from './angularform/angularform.component';
+import { AngularreactiveformsComponent } from './angularreactiveforms/angularreactiveforms.component';
+import { RouterModule } from '@angular/router';
+import { SinglepostComponent } from './singlepost/singlepost.component';
 
 @NgModule({
   declarations: [
@@ -30,15 +35,26 @@ import { AngularServicesComponent } from './angular-services/angular-services.co
     AppendPipe,
     AppendCLIPipe,
     SummaryPipe,
-    AngularServicesComponent
+    AngularServicesComponent,
+    AngularformComponent,
+    AngularreactiveformsComponent,
+    SinglepostComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot([
+      {path:'AngularreactiveformsComponent',component:AngularreactiveformsComponent},
+      {path:'PostListComponent',component:PostListComponent},
+      {path:'SinglepostComponent/:id',component:SinglepostComponent}
+    ])
   ],
-  providers: [],
+  providers: [
+    PostService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
